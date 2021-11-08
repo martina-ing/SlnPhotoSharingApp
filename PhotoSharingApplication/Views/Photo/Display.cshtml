@@ -6,18 +6,36 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Display</title>
+    <title>@Model.Title</title>
 </head>
 <body>
     <div>
         <h2>"@Model.Title"</h2>
 
         @if (Model.PhotoFile != null)
-         {
+        {
             <img width="800" src="@Url.Action("GetImage", "Photo",new { id=Model.PhotoID })" />
+
+            <p>
+                @Html.DisplayFor(model => model.Description)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.UserName):
+                @Html.DisplayFor(model => model.UserName)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.CreatedDate):
+                @Html.DisplayFor(model => model.CreatedDate)
+            </p>
+
+            <p>
+                @Html.ActionLink("Back to List", "Index")
+            </p>
          }
 
-        
+
     </div>
 </body>
 </html>
