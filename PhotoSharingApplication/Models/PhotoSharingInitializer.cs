@@ -36,7 +36,22 @@ namespace PhotoSharingApplication.Models
                     ImageMimeType = "image/jpeg",
                     CreatedDate = DateTime.Today
                 },
-
+                 new Photo {
+                    Title = "My New Adventure Works Bike",
+                    Description = "It's the bees knees!",
+                    UserName = "Fred",
+                    PhotoFile = getFileBytes("\\Images\\orchard.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today
+                },
+                new Photo {
+                    Title = "View from the start line",
+                    Description = "I took this photo just before we started over my handle bars.",
+                    UserName = "Sue",
+                    PhotoFile = getFileBytes("\\Images\\path.jpg"),
+                    ImageMimeType = "image/jpeg",
+                    CreatedDate = DateTime.Today
+                }
             };
 
             photos.ForEach(s => context.Photos.Add(s));

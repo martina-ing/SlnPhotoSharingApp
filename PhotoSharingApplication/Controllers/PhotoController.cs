@@ -97,13 +97,9 @@ namespace PhotoSharingApplication.Controllers
             {
                 if (image != null)
                 {
-                    photo.ImageMimeType =
-                    image.ContentType;
-                    photo.PhotoFile = new
-                    byte[image.ContentLength];
-                    image.InputStream.Read(
-                    photo.PhotoFile, 0,
-                    image.ContentLength);
+                    photo.ImageMimeType =image.ContentType;
+                    photo.PhotoFile = new byte[image.ContentLength];
+                    image.InputStream.Read(photo.PhotoFile, 0,image.ContentLength);
                 }
 
             }
